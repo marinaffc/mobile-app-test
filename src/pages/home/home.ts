@@ -6,9 +6,14 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  vars: any = [];
+  variable: any;
   constructor(public navCtrl: NavController) {
 
+  }
+  push(element) {
+    this.vars.push(element);
+    this.variable = '';
   }
 
 }
