@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content padding>
-  <input type="texte" [(ngModel)]="variable"/>
+  <ion-input type="text" [(ngModel)]="variable"></ion-input>
   <button (click)="push(variable)"></button>
   <div *ngFor="let var of vars">
     <span>{{var}}</span>
