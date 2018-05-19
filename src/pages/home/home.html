@@ -5,9 +5,19 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-input type="text" [(ngModel)]="variable"></ion-input>
-  <button (click)="push(variable)"></button>
-  <div *ngFor="let var of vars">
-    <span>{{var}}</span>
-  </div>
+  <p>Listado pequeno </p>
+    <ion-list>
+
+        <ion-item>
+          <ion-label fixed>Nombre</ion-label>
+          <ion-input type="text" value="" [(ngModel)]="variable"></ion-input>
+        </ion-item>
+        </ion-list>
+        <button ion-button color="light" (click)="push(variable)">Añade</button>
+        <ion-list>
+        <ion-item *ngFor="let name of vars; let i=index">
+          <p>{{name}}</p>
+        </ion-item>
+      </ion-list>
+  
 </ion-content>

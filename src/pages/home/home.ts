@@ -13,6 +13,7 @@ export class HomePage {
   }
   push(element) {
     this.vars.push(element);
+    console.log(this.vars)
     this.variable = '';
   }
 
