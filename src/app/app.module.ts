@@ -11,6 +11,20 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SecondMenu } from '../pages/home/second-menu/second-menu';
+import { HomeModule } from '../pages/home/home-module';
+import { Firebase } from '@ionic-native/firebase';
+// import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCuR0y6P8DRSNtkAG4BFH_CSB-CiIc5u1M",
+    authDomain: "piso-ocio.firebaseapp.com",
+    databaseURL: "https://piso-ocio.firebaseio.com",
+    projectId: "piso-ocio",
+    storageBucket: "piso-ocio.appspot.com",
+    messagingSenderId: "654907577803"
+}; 
 
 @NgModule({
   declarations: [
@@ -23,7 +37,11 @@ import { SecondMenu } from '../pages/home/second-menu/second-menu';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HomeModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -35,9 +53,14 @@ import { SecondMenu } from '../pages/home/second-menu/second-menu';
     SecondMenu
   ],
   providers: [
+    AngularFireDatabaseModule,
     StatusBar,
     SplashScreen,
+    Firebase,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
-export class AppModule {}
+
+export class AppModule {
+  
+}

@@ -15,5 +15,10 @@
 {{p.title}}              </button>
           </ion-item>
     </ion-list>
+    <p>
+        <ion-item *ngFor="let song of list | async">
+            {{song |json}}
+          </ion-item>
+    </p>
  
 </ion-content>
