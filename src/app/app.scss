@@ -14,3 +14,11 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+@import "theme/imports/imports.settings";
+@import "theme/imports/imports.tools";
+@import "theme/imports/imports.generic";
+@import "theme/imports/imports.elements";
+@import "theme/imports/imports.objects";
+@import "theme/imports/imports.components";
+@import "theme/imports/imports.utilites";

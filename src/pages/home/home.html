@@ -1,23 +1,19 @@
+<ion-nav [root]="rootPage"></ion-nav>
+
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>
+      Home
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <p>Listado pequeno </p>
+<ion-content>
     <ion-list>
-
-        <ion-item>
-          <ion-label fixed>Nombre</ion-label>
-          <ion-input type="text" value="" [(ngModel)]="variable"></ion-input>
-        </ion-item>
-        </ion-list>
-        <button ion-button color="light" (click)="push(variable)">Añade</button>
-        <ion-list>
-        <ion-item *ngFor="let name of vars; let i=index">
-          <p>{{name}}</p>
-        </ion-item>
-      </ion-list>
-  
+        <ion-item *ngFor="let p of pages; let i=index">
+            <button ion-button (click)="openPage(p)">
+{{p.title}}              </button>
+          </ion-item>
+    </ion-list>
+ 
 </ion-content>
